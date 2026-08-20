@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{姓名}} - {{目标岗位}}简历</title>
+  <style>
+    @page { size: A4; margin: 0; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --accent: #2563eb;
+      --accent-dark: #1e3a8a;
+      --ink: #172033;
+      --muted: #667085;
+      --band: #f4f6f8;
+      --metric: #0f8a83;
+      --metric-bg: #f3f6f8;
+    }
+    html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    body {
+      background: #fff;
+      color: var(--ink);
+      font-family: Georgia, "Times New Roman", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", serif;
+      font-size: 12.8px;
+      line-height: 1.5;
+    }
+    .page {
+      position: relative;
+      width: 210mm;
+      height: 297mm;
+      margin: 0 auto;
+      padding: 9mm 11mm 7mm;
+      overflow: hidden;
+      page-break-after: always;
+      break-after: page;
+    }
+    .page:last-child { page-break-after: auto; }
+    .profile { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+    .profile-copy { min-width: 0; flex: 1; }
+    h1, h2 {
+      font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      letter-spacing: 0;
+    }
+    h1 { font-size: 22px; margin-bottom: 1px; }
+    h2 { color: var(--accent); font-size: 17px; margin-top: 9px; }
+    h3 { color: var(--accent-dark); font-size: 13.8px; margin: 8px 0 2px; }
+    .positioning { color: var(--accent-dark); font-size: 13.5px; font-weight: 700; }
+    .contact, .links, .skills { font-size: 11.8px; margin-top: 2px; }
+    a { color: var(--accent); text-decoration: none; }
+    .avatar { width: 24mm; height: 24mm; flex: 0 0 24mm; border: 1px solid #cbd5e1; border-radius: 50%; overflow: hidden; }
+    .avatar img { display: block; width: 115%; height: 115%; margin: -7.5% 0 0 -7.5%; object-fit: cover; object-position: center; }
+    .rule { border: 0; border-top: 1.2px solid #3b82f6; margin: 2px 0 5px; }
+    .org { display: flex; justify-content: space-between; background: var(--band); padding: 3px 8px; margin: 6px 0 4px; }
+    .org strong { font-size: 12.8px; }
+    .org time { color: #344054; white-space: nowrap; font-size: 11.4px; font-weight: 700; }
+    .meta { color: var(--muted); font-size: 10.7px; margin-bottom: 2px; }
+    ul { list-style: none; }
+    li { position: relative; padding-left: 14px; margin-bottom: 1px; text-align: justify; }
+    li::before { position: absolute; left: 2px; content: "•"; color: #475467; font-weight: 700; }
+    .module { color: #243b64; }
+    li.metric { margin: 3px 0; padding: 3px 7px 3px 10px; border-left: 2px solid var(--metric); background: var(--metric-bg); text-align: left; }
+    li.metric::before { content: none; }
+    .page-no { position: absolute; right: 10.6mm; bottom: 3.5mm; color: #999; font-size: 9px; }
+    @media print {
+      body { font-size: 12.4px; line-height: 1.46; }
+      .page { width: auto; height: 296mm; margin: 0; padding: 8mm 11mm 6mm; page-break-inside: avoid; break-inside: avoid-page; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="profile">
+      <div class="profile-copy">
+        <h1>{{姓名}} <span lang="en">{{英文名}}</span></h1>
+        <p class="positioning">{{目标岗位}} | {{能力标签1}} / {{能力标签2}} / {{能力标签3}}</p>
+        <p class="contact">{{电话}} | {{邮箱}} | {{所在地}}</p>
+        <p class="links">GitHub：<a href="{{GitHub链接}}">{{GitHub展示文字}}</a> | 个人网页：<a href="{{个人网页链接}}">{{个人网页展示文字}}</a></p>
+        <p class="skills">{{核心能力摘要}}</p>
+      </div>
+      <figure class="avatar"><img src="{{头像文件}}" alt="{{姓名}}头像"></figure>
+    </header>
+
+    <section>
+      <h2>工作经历</h2><hr class="rule">
+      <div class="org"><strong>{{公司及岗位}}</strong><time>{{时间}}</time></div>
+      <p>{{职责概述}}</p>
+    </section>
+
+    <section>
+      <h2>核心项目</h2><hr class="rule">
+      <article>
+        <h3>{{项目名称}}</h3>
+        <p class="meta">{{角色}} | {{项目时间}} | {{方法与工具}}</p>
+        <ul>
+          <li><strong class="module">背景与目标：</strong>{{内容}}</li>
+          <li><strong class="module">产品与链路：</strong>{{内容}}</li>
+          <li class="metric"><strong class="module">数据与指标：</strong>{{内容}}</li>
+          <li><strong class="module">我的职责：</strong>{{内容}}</li>
+        </ul>
+      </article>
+    </section>
+    <span class="page-no">1 / 2</span>
+  </main>
+
+  <main class="page">
+    <section>
+      <h2>项目经历</h2><hr class="rule">
+      <article>
+        <h3>{{项目名称}}</h3>
+        <p class="meta">{{角色}} | {{项目时间}}</p>
+        <ul>
+          <li><strong class="module">背景与目标：</strong>{{内容}}</li>
+          <li><strong class="module">产品与链路：</strong>{{内容}}</li>
+          <li class="metric"><strong class="module">数据与指标：</strong>{{内容}}</li>
+          <li><strong class="module">我的职责：</strong>{{内容}}</li>
+        </ul>
+      </article>
+    </section>
+
+    <section>
+      <h2>教育与荣誉</h2><hr class="rule">
+      <div class="org"><strong>{{学校及专业}}</strong><time>{{时间}}</time></div>
+      <p>{{证书、奖项或补充信息}}</p>
+    </section>
+    <span class="page-no">2 / 2</span>
+  </main>
+</body>
+</html>
