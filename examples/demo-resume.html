@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>虚构示例 - AI 产品经理简历</title>
+  <style>
+    @page { size: A4; margin: 0; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --blue: #2563eb;
+      --navy: #1e3a8a;
+      --ink: #172033;
+      --muted: #667085;
+      --band: #f4f6f8;
+      --metric: #0f8a83;
+      --metric-bg: #f3f6f8;
+      --demo: #9f1239;
+      --demo-bg: #fff1f2;
+    }
+    html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    body {
+      background: #eef1f5;
+      color: var(--ink);
+      font-family: Georgia, "Times New Roman", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", serif;
+      font-size: 12.8px;
+      line-height: 1.5;
+    }
+    .page {
+      position: relative;
+      width: 210mm;
+      height: 297mm;
+      margin: 12px auto;
+      padding: 9mm 11mm 7mm;
+      overflow: hidden;
+      background: #fff;
+      page-break-after: always;
+      break-after: page;
+    }
+    .page:last-child { page-break-after: auto; }
+    .demo-note {
+      display: inline-block;
+      margin-bottom: 5px;
+      padding: 2px 7px;
+      border-left: 2px solid var(--demo);
+      background: var(--demo-bg);
+      color: var(--demo);
+      font-family: "PingFang SC", "Hiragino Sans GB", sans-serif;
+      font-size: 9.8px;
+      font-weight: 700;
+    }
+    .profile { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+    .profile-copy { min-width: 0; flex: 1; }
+    h1, h2 {
+      font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      letter-spacing: 0;
+    }
+    h1 { margin-bottom: 1px; font-size: 22px; }
+    h1 span { color: #344054; font-family: Georgia, "Times New Roman", serif; font-size: 17px; font-weight: 400; }
+    h2 { margin-top: 9px; color: var(--blue); font-size: 17px; }
+    h3 { margin: 8px 0 2px; color: var(--navy); font-size: 13.8px; }
+    .positioning { margin-bottom: 1px; color: var(--navy); font-size: 13.5px; font-weight: 700; }
+    .contact, .links, .skills { margin-top: 2px; font-size: 11.8px; }
+    .skills { color: #344054; }
+    a { color: var(--blue); text-decoration: none; }
+    .avatar {
+      display: grid;
+      width: 24mm;
+      height: 24mm;
+      flex: 0 0 24mm;
+      place-items: center;
+      border: 1px solid #bfdbfe;
+      border-radius: 50%;
+      background: #eff6ff;
+      color: var(--navy);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 24px;
+      font-weight: 700;
+    }
+    .rule { margin: 2px 0 5px; border: 0; border-top: 1.2px solid #3b82f6; }
+    .org {
+      display: flex;
+      justify-content: space-between;
+      margin: 6px 0 4px;
+      padding: 3px 8px;
+      background: var(--band);
+      border-radius: 2px;
+    }
+    .org strong { font-size: 12.8px; }
+    .org time { color: #344054; font-size: 11.4px; font-weight: 700; white-space: nowrap; }
+    .fictional { color: var(--demo); font-size: 10.4px; font-weight: 400; }
+    .meta { margin-bottom: 2px; color: var(--muted); font-size: 10.7px; }
+    ul { list-style: none; }
+    li { position: relative; margin-bottom: 1px; padding-left: 14px; text-align: justify; }
+    li::before { position: absolute; left: 2px; content: "•"; color: #475467; font-weight: 700; }
+    li.sub { padding-left: 28px; }
+    li.sub::before { left: 16px; content: "◦"; }
+    .module { color: #243b64; }
+    li.metric {
+      margin: 3px 0;
+      padding: 3px 7px 3px 10px;
+      border-left: 2px solid var(--metric);
+      background: var(--metric-bg);
+      text-align: left;
+    }
+    li.metric::before { content: none; }
+    .demo-data { color: var(--demo); font-size: 10.4px; font-weight: 700; }
+    .page-no { position: absolute; right: 10.6mm; bottom: 3.5mm; color: #999; font-size: 9px; }
+    @media print {
+      body { background: #fff; font-size: 12.6px; line-height: 1.54; }
+      .page {
+        width: auto;
+        height: 296mm;
+        margin: 0;
+        padding: 8mm 11mm 6mm;
+        page-break-inside: avoid;
+        break-inside: avoid-page;
+      }
+      h2 { margin-top: 8px; }
+      h3 { margin-top: 7px; }
+      .org { margin: 5px 0 4px; }
+      .page:first-of-type h2 { margin-top: 11px; }
+      .page:first-of-type h3 { margin-top: 9px; }
+      .page:first-of-type li { margin-bottom: 4px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="demo-note">虚构示例：人物、公司、项目与数据均为演示内容</div>
+    <header class="profile">
+      <div class="profile-copy">
+        <h1>示例候选人 <span>Demo Profile</span></h1>
+        <p class="positioning">AI 产品经理 | Agent / RAG / Personal Memory</p>
+        <p class="contact">000-0000-0000 | demo@example.com | 示例城市</p>
+        <p class="links">GitHub：<a href="https://example.com">example.com/demo</a> | 个人网页：<a href="https://example.com">example.com/profile</a></p>
+        <p class="skills">Agent 产品化 · 模型评测 · RAG 知识问答 · 多模态检索 · 工作流自动化</p>
+      </div>
+      <div class="avatar" aria-label="字母占位头像">DP</div>
+    </header>
+
+    <section>
+      <h2>职业摘要</h2><hr class="rule">
+      <ul>
+        <li><strong>4 年产品经验，聚焦 Agent、RAG 与 AI 助手产品化</strong>，能够从用户问题、产品链路、模型效果到上线指标推进完整闭环。</li>
+        <li>具备技术理解与产品判断能力，熟悉意图路由、Tool Calling、混合检索、重排序、记忆门控和模型评测。</li>
+        <li>擅长将复杂系统转化为可交付方案，建立 Golden Set、Badcase 归因、灰度发布和跨团队协作机制。</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>工作经历</h2><hr class="rule">
+      <div class="org">
+        <strong>星桥智能科技有限公司 <span class="fictional">（虚构）</span> | AI 产品经理</strong>
+        <time>2024/07 - 至今</time>
+      </div>
+      <ul>
+        <li>负责企业 AI 工作台、知识库问答与个人记忆方向，从场景定义、方案设计、模型评测到灰度上线推进完整产品闭环。</li>
+        <li>建立 Golden Set、标注规范和 Badcase 归因机制，协同算法、研发、设计及业务团队持续优化效果。</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>核心项目经历</h2><hr class="rule">
+      <article>
+        <h3>企业 AI 工作台智能体化</h3>
+        <p class="meta">AI 产品经理 | 2025/01 - 至今 | Agent Router · Tool Calling · Workflow</p>
+        <ul>
+          <li><strong class="module">背景与目标：</strong>原工作台依赖多个功能入口，复杂任务需要用户自行拆解；目标是通过自然语言统一入口完成意图理解、任务规划与工具调用。</li>
+          <li><strong class="module">产品与链路：</strong>用户输入 -> 意图识别 -> 任务拆解 -> 技能路由 -> 工具执行 -> 结果汇总 -> 用户反馈。</li>
+          <li class="sub"><strong>双模式设计：</strong>高频确定性任务走预置工作流，开放性任务交由 Agent 自主规划，并设置超时、失败回退与人工接管。</li>
+          <li class="metric"><span class="demo-data">演示数据：</span>操作步骤 <strong>4 步 -> 1 步</strong>，任务成功率 <strong>81% -> 95%</strong>，平均响应时间 <strong>4.1s -> 2.0s</strong>。</li>
+          <li><strong class="module">我的职责：</strong>定义产品形态、任务边界、路由规则和效果指标，推动算法、研发与业务团队完成灰度上线。</li>
+        </ul>
+      </article>
+
+      <article>
+        <h3>企业知识库智能问答 | RAG</h3>
+        <p class="meta">AI 产品经理 | 2024/08 - 至今 | 混合检索 · 重排序 · 引用溯源</p>
+        <ul>
+          <li><strong class="module">背景与目标：</strong>企业文档分散，传统搜索只能返回文件列表且答案无法验证；目标是建立可溯源的知识问答能力。</li>
+          <li><strong class="module">产品与链路：</strong>文档解析 -> 分片 -> 向量与关键词混合检索 -> 重排序 -> 模型生成 -> 引用定位 -> 反馈闭环。</li>
+          <li class="sub"><strong>评测闭环：</strong>按事实问答、总结和跨文档推理构建 Golden Set，结合自动评测与人工复核定位召回、生成和引用问题。</li>
+          <li class="metric"><span class="demo-data">演示数据：</span>回答准确率 <strong>76% -> 91%</strong>，引用命中率 <strong>96%</strong>，人工查找时间下降 <strong>63%</strong>。</li>
+          <li><strong class="module">我的职责：</strong>负责检索问答体验、标注规范、Golden Set、Badcase 归因和版本验收。</li>
+        </ul>
+      </article>
+    </section>
+    <span class="page-no">1 / 2</span>
+  </main>
+
+  <main class="page">
+    <div class="demo-note">虚构示例：所有指标均为演示数据，不可用于真实求职材料</div>
+    <section>
+      <h2>核心项目经历（续）</h2><hr class="rule">
+      <article>
+        <h3>跨会话个人记忆系统</h3>
+        <p class="meta">AI 产品经理 | 2024/10 - 2025/06 | Memory Gate · 语义召回 · 隐私控制</p>
+        <ul>
+          <li><strong class="module">背景与目标：</strong>助手无法持续理解用户偏好，跨会话需要反复补充上下文；目标是在隐私可控前提下建立长期记忆。</li>
+          <li><strong class="module">产品与链路：</strong>对话与行为 -> 记忆门控 -> 信息提取 -> 分类存储 -> 语义召回 -> 回答应用 -> 更新与遗忘。</li>
+          <li class="sub"><strong>透明可控：</strong>提供记忆查看、编辑、删除和暂停入口，并对敏感内容设置禁止提取与过期清理规则。</li>
+          <li class="metric"><span class="demo-data">演示数据：</span>提取准确率 <strong>74% -> 93%</strong>，应用准确率 <strong>58% -> 89%</strong>，重复补充信息的会话占比下降 <strong>41%</strong>。</li>
+          <li><strong class="module">我的职责：</strong>设计记忆分类、交互控制、评测体系和分期方案，协调模型与客户端落地。</li>
+        </ul>
+      </article>
+
+      <article>
+        <h3>多模态内容搜索</h3>
+        <p class="meta">AI 产品经理 | 2024/07 - 2024/12 | 多模态向量 · 实体识别 · 重排序</p>
+        <ul>
+          <li><strong class="module">背景与目标：</strong>图片、音视频和文档缺少统一检索，用户难以通过自然语言定位资源；目标是提升多模态内容发现效率。</li>
+          <li><strong class="module">产品与链路：</strong>Query -> 实体识别 -> 多模态向量化 -> 多路召回 -> 行为重排 -> 结果解释。</li>
+          <li class="metric"><span class="demo-data">演示数据：</span>Top 10 召回率 <strong>68% -> 87%</strong>，搜索无结果率下降 <strong>32%</strong>。</li>
+          <li><strong class="module">我的职责：</strong>负责场景定义、排序指标、结果形态与 A/B 测试方案，推动离线评测与线上行为指标对齐。</li>
+        </ul>
+      </article>
+
+      <article>
+        <h3>产品需求自动化工作流</h3>
+        <p class="meta">个人实验项目 | 2025/03 - 2025/06 | Multi-Agent · 文档自动化</p>
+        <ul>
+          <li><strong class="module">背景与目标：</strong>客研整理、需求流转和评审材料存在大量重复劳动；目标是以 Agent 编排产品工作流并保留人工决策边界。</li>
+          <li><strong class="module">产品与链路：</strong>目标澄清 -> 任务路由 -> 专项 Agent -> 结果质检 -> 文档写入 -> 定时巡检。</li>
+          <li class="metric"><span class="demo-data">演示数据：</span>每周节省约 <strong>3 小时</strong>整理时间，需求字段完整率 <strong>62% -> 94%</strong>。</li>
+          <li><strong class="module">我的职责：</strong>搭建工作流，定义 Agent 边界、验收规则、异常回退机制与结构化输出格式。</li>
+        </ul>
+      </article>
+    </section>
+
+    <section>
+      <h2>早期经历</h2><hr class="rule">
+      <div class="org">
+        <strong>云帆协作软件有限公司 <span class="fictional">（虚构）</span> | 产品经理</strong>
+        <time>2022/07 - 2024/06</time>
+      </div>
+      <ul>
+        <li><strong class="module">背景与目标：</strong>用户反馈分散在客服、销售与社群，需求口径不一致；目标是建立统一需求池和版本决策依据。</li>
+        <li><strong class="module">产品与链路：</strong>反馈采集 -> 归类查重 -> 价值评估 -> 版本规划 -> 进度看板 -> 上线复盘。</li>
+        <li class="metric"><span class="demo-data">演示数据：</span>版本需求按期交付率 <strong>72% -> 90%</strong>，重复需求识别率提升至 <strong>85%</strong>。</li>
+        <li><strong class="module">我的职责：</strong>负责需求字段、优先级规则、数据看板和自动化通知，推动产品、研发与交付团队统一协作口径。</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>教育与能力</h2><hr class="rule">
+      <div class="org">
+        <strong>示例大学 <span class="fictional">（虚构）</span> | 信息管理与信息系统 · 本科</strong>
+        <time>2018 - 2022</time>
+      </div>
+      <ul>
+        <li><strong class="module">产品能力：</strong>需求分析、流程设计、指标体系、模型评测、跨团队推进。</li>
+        <li><strong class="module">工具方法：</strong>Figma、Axure、SQL、Python、LLM、RAG、Agent、A/B 测试。</li>
+        <li><strong class="module">实践输出：</strong>维护虚构 Demo、评测集与产品复盘文档，用可验证材料沉淀项目方法。</li>
+      </ul>
+    </section>
+    <span class="page-no">2 / 2</span>
+  </main>
+</body>
+</html>
