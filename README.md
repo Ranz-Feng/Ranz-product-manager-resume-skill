@@ -6,9 +6,9 @@
 
 > 虚构示例：下方人物、公司、项目与数据均为演示内容，不对应任何真实个人或组织。
 
-![虚构 AI 产品经理简历示例第 1 页](examples/demo-page-1.png)
+![虚构 AI 产品经理简历示例第 1 页](https://github.com/user-attachments/assets/272997f6-c2e5-4b7b-807e-72af4ff13253)
 
-![虚构 AI 产品经理简历示例第 2 页](examples/demo-page-2.png)
+![虚构 AI 产品经理简历示例第 2 页](https://github.com/user-attachments/assets/cfe4c871-6394-43b6-be0d-8defaede38ec)
 
 可查看 [示例 HTML](examples/demo-resume.html) 与 [示例内容源稿](examples/demo-resume-source.md)。
 
