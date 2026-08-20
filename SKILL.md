@@ -82,7 +82,7 @@ For a circular avatar, preserve the head and shoulders. Adjust the source-image 
 Read [references/acceptance-checklist.md](references/acceptance-checklist.md). Run:
 
 ```bash
-node scripts/validate_print.mjs path/to/resume.html --expected-pages 2 --output-dir /tmp/resume-qa
+node scripts/validate_print.mjs path/to/resume.html --expected-pages 2 --output-dir /tmp/resume-qa --screenshot-scale 2
 ```
 
 If Playwright is not resolvable, set `PLAYWRIGHT_MODULE` to its module path. Review every generated page screenshot. Also print-preview in the user's target browser because Safari and Chrome can produce different font metrics and page breaks.
@@ -97,3 +97,4 @@ Provide the editable HTML, state the verified page count and browser, and list e
 - [references/acceptance-checklist.md](references/acceptance-checklist.md): content, visual, avatar, typography, and print gates.
 - [assets/resume-template.html](assets/resume-template.html): neutral two-page A4 HTML starter.
 - `scripts/validate_print.mjs`: automated page count, overflow, density, font, and screenshot checks.
+- [examples/demo-resume.html](examples/demo-resume.html): fully fictional two-page example output; use it for visual reference, never as a source of real claims.
