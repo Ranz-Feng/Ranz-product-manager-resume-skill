@@ -1,0 +1,4 @@
+interface:
+  display_name: "中文产品简历优化"
+  short_description: "重构产品经理简历并生成经验证的双页 A4 HTML"
+  default_prompt: "使用 $optimize-cn-product-resume 优化这份中文产品经理简历，并生成经过打印验证的 HTML。"
