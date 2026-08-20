@@ -11,13 +11,14 @@ function readOption(name, fallback) {
 
 const input = process.argv[2];
 if (!input || input.startsWith("--")) {
-  console.error("Usage: node validate_print.mjs <resume.html> [--expected-pages 2] [--output-dir /tmp/resume-qa]");
+  console.error("Usage: node validate_print.mjs <resume.html> [--expected-pages 2] [--output-dir /tmp/resume-qa] [--screenshot-scale 2]");
   process.exit(2);
 }
 
 const htmlPath = path.resolve(input);
 const expectedPages = Number(readOption("--expected-pages", "2"));
 const outputDir = path.resolve(readOption("--output-dir", "/tmp/resume-qa"));
+const screenshotScale = Number(readOption("--screenshot-scale", "1"));
 const moduleValue = process.env.PLAYWRIGHT_MODULE || "playwright";
 const moduleSpecifier = path.isAbsolute(moduleValue) ? pathToFileURL(moduleValue).href : moduleValue;
 
@@ -40,7 +41,7 @@ const launchOptions = { headless: true };
 if (process.env.CHROME_EXECUTABLE) launchOptions.executablePath = process.env.CHROME_EXECUTABLE;
 
 const browser = await chromium.launch(launchOptions);
-const page = await browser.newPage({ viewport: { width: 1000, height: 1300 }, deviceScaleFactor: 1 });
+const page = await browser.newPage({ viewport: { width: 1000, height: 1300 }, deviceScaleFactor: screenshotScale });
 await page.goto(pathToFileURL(htmlPath).href, { waitUntil: "load" });
 await page.emulateMedia({ media: "print" });
 await page.evaluate(() => document.fonts.ready);
@@ -68,6 +69,7 @@ const report = {
   file: htmlPath,
   expectedPages,
   pageCount,
+  screenshotScale,
   bodyFont: await page.evaluate(() => getComputedStyle(document.body).fontFamily),
   checks,
   screenshots: outputDir,
